@@ -6,7 +6,7 @@ const { WebClient } = require("@slack/web-api");
 const channelList: { id: any; label: string; description: string }[] = [];
 export function activate(context: vscode.ExtensionContext) {
   const web = new WebClient(
-    "xoxp-1013002035461-1015211226422-1551904813766-176f36264bf42a819a3b4cadf128e5de"
+    "TOKEN"
   );
   vscode.commands.registerCommand("codetoslack.copy", () => copy(web));
 }
