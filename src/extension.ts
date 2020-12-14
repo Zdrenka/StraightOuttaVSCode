@@ -3,11 +3,21 @@ import { Channel } from "./model/Channel";
 import { User } from "./model/User";
 
 const { WebClient } = require("@slack/web-api");
+
 const channelList: { id: any; label: string; description: string }[] = [];
+let web: {};
 export function activate(context: vscode.ExtensionContext) {
-  const web = new WebClient(
-    "TOKEN"
+  const CONFIG: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration(
+    "straightOuttaVsCode"
   );
+  const TOKEN = CONFIG.get("token");
+    if (TOKEN) {
+      web = new WebClient(TOKEN);
+    } else {
+      vscode.window.showErrorMessage(
+        "Please add your Slack User Token to the configuration to use this extension."
+      );
+    }
   vscode.commands.registerCommand("codetoslack.copy", () => copy(web));
 }
 

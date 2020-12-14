@@ -1,7 +1,7 @@
 {
-	"name": "codetoslack",
-	"displayName": "CodeToSlack",
-	"description": "An extension to copy code from VSCode to slack with syntax highlighting",
+	"name": "straightouttavscode",
+	"displayName": "Straight Outta VSCode",
+	"description": "An extension to copy code from VSCode to Slack with syntax highlighting",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.51.0"
@@ -10,8 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:codetoslack.copy",
-		"onCommand:codetoslack.listUsers"
+		"onCommand:codetoslack.copy"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -29,36 +28,16 @@
 					"group": "9_cutcopypaste"
 				}
 			]
-		}
-	},
-	"configuration": {
-		"type": "object",
-		"title": "Straight Outta VSCode Configuration",
-		"properties": {
-			"straightOuttaVsCode.token": {
-				"type": "string",
-				"default": "",
-				"description": "Slack team token"
-			},
-			"straightOuttaVsCode.listChannels": {
-				"type": "boolean",
-				"default": true,
-				"description": "True if you want to list the channels"
-			},
-			"straightOuttaVsCode.listGroups": {
-				"type": "boolean",
-				"default": true,
-				"description": "True if you want to list the groups"
-			},
-			"straightOuttaVsCode.listMembers": {
-				"type": "boolean",
-				"default": true,
-				"description": "True if you want to list the members"
-			},
-			"straightOuttaVsCode.fileWithFullPath": {
-				"type": "boolean",
-				"default": false,
-				"description": "True if you want to send files with full path"
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Straight Outta VSCode Configuration",
+			"properties": {
+				"straightOuttaVsCode.token": {
+					"type": "string",
+					"default": "",
+					"description": "Slack User Token"
+				}
 			}
 		}
 	},
